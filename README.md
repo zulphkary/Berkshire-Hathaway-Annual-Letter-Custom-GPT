@@ -1,6 +1,4 @@
 # Berkshire-Hathaway-Annual-Letter-Custom-GPT
-Berkshire Hathaway Annual Letter (Custom) GPT made using LocalGPT by PromptEngineer(https://github.com/PromtEngineer/localGPT). All credits go to him, this project is merely trained on the annual letters from Berkshire Hathaway with an interactive scrollable chat UI with history and context.
-
 Please follow the guide from PromtEngineer to setup the enviroment. To get the results from the below screenshots make sure to have the SOURCE DOCUMENTS, run_localGPT.py, run_chat.py as these files are different from the one from PromtEngineer. The local model will be generated with whichever LLM you choose.
 
 Below are some cool screenshots of the application + responses:
