@@ -71,27 +71,23 @@ if "QA" not in st.session_state:
 
 st.title("Berkshire Hathaway Annual Letter GPT")
 
-# Initialize chat history
+# chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message.get("avatar")):
         st.markdown(message["content"])
 
-# React to user input
+# react to user
 if prompt := st.chat_input("Based on the provided documents, what does ..."):
-    # Display user message in chat message container
+    
     st.chat_message("user", avatar='baby.png').markdown(prompt)
-    # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt, "avatar": 'baby.png'})
 
-    # Then pass the prompt to the LLM
+    # pass  prompt to LLM
     response = st.session_state["QA"](prompt)
     answer, docs = response["result"], response["source_documents"]
-    # Display assistant response in chat message container
     with st.chat_message(name="assistant", avatar='warren.png'):
         st.markdown(answer)
-    # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": answer, "avatar": 'warren.png'})
